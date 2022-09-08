@@ -1,0 +1,29 @@
+[package]
+name = "capnp-futures"
+version = "0.14.1"
+authors = [ "David Renshaw <drenshaw@gmail.com>" ]
+license = "MIT"
+
+description = "async serialization for Cap'n Proto messages"
+repository = "https://github.com/dwrensha/capnproto-rust"
+documentation = "https://docs.capnproto-rust.org/capnp_futures/"
+edition = "2018"
+
+keywords = ["async"]
+
+[dependencies]
+capnp = { version = "0.14.0", path = "../capnp" }
+
+[dependencies.futures]
+version = "0.3.0"
+default-features = false
+features = ["std"]
+
+[dev-dependencies.futures]
+version = "0.3.0"
+default-features = false
+features = ["executor"]
+
+[dev-dependencies]
+capnp = { version = "0.14.0", path = "../capnp", features = ["quickcheck"] }
+quickcheck = "0.9"
